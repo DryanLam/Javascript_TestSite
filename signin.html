@@ -1,0 +1,19 @@
+<script>
+
+function getName() { 
+	var name = new URLSearchParams(window.location.search).get("username");
+	var node = document.createElement("H1");
+	var textnode = document.createTextNode("Chức mừng bạn '" + name.toUpperCase() + "' đã đăng nhập thành công.");
+	node.appendChild(textnode);
+	document.getElementById("hello").appendChild(node);
+	document.getElementById("currentDate").innerHTML = "Ngày đăng nhập: " + new Date().toLocaleDateString();
+}
+
+</script>
+
+<html>
+	<body onload="getName()">
+		<div id="hello" style="text-align: center; font-size:30px; color:blue;"></div>
+	</body>
+	<h3 id="currentDate"><h3>
+</html>

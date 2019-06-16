@@ -1,0 +1,55 @@
+<script>
+
+function getTest() { 
+
+}
+
+</script>
+
+<style>
+header {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: block;
+}
+
+table, th, td {
+    border: 1px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+.descrpt, header {
+	color:blue;
+}
+
+#fCol {
+	font-style: italic;
+}
+
+table tr:nth-child(even) {
+
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+</style>
+
+<html>
+	<head><title>About Page</title></head>
+	<body>
+	  <header><h1>ABOUT US</h1></header>
+		<table>
+			<tr style="text-align: center;"><td colspan="2"><i><b>Mentor</b></i></td></td>
+			<tr><td id="fCol">Name</td><td class="descrpt">Dryan Lam</td>
+			</tr>
+			<tr><td id="fCol">Phone</td><td class="descrpt">0904105010</td>
+			</tr>
+		</table>
+	</body>
+	<form>
+		<p><a href="#" onclick="history.back()">Go back!</a></p>
+	</form>
+</html>

@@ -1,0 +1,208 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function showName(){
+    $a= document.getElementById("username").value;
+    alert($a);
+        }
+</script>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+form, div.container{
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Set a style for the submit button */
+.signin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.center {
+  text-align: center;
+}
+
+.linktext {
+  color: dodgerblue;
+}
+
+/* Set a style for the slider bar*/
+.slider {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+/* Set a style for the slider thumb*/
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+</style>
+<body>
+<form action="./signin.html" method="get">
+	<fieldset>
+		<legend>Sign In</legend>
+		<label for="email"><b>Email</b></label></br><input type="text" placeholder="Enter Email" name="email"></br>
+		<label for="username"><b>User Name</b></label></br><input type="text" id="username" name="username" placeholder="Username" required></br>
+		<label for="password"><b>Password</b></label></br><input type="password" id="password" placeholder="Password" required></br>
+		<!-- <input type="submit" class="signin" value="Sign In"></br> -->
+		<!-- <input type="submit" class="signin" value="Sign In" onclick="showName()"></br> -->
+		<input type="submit" class="signin" value="Sign In"></br>
+	</fieldset>
+	</div>
+</form>
+<div class="container"> 
+<fieldset>
+	<legend>Radio button</legend>
+	<input type="radio" name="gender" value="male" checked> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<input type="radio" name="gender" value="other"> Other
+</fieldset>
+</div>
+
+<div class="container"> 
+<fieldset>
+	<legend>Check box</legend>
+	<p>I have:</p>
+	<input type="checkbox" name="vehicle1" value="Bike">Bicycle<br>
+	<input type="checkbox" name="vehicle2" value="Car">Car<br></br>
+	<textarea rows="10" cols="50">This section encourages you to enter any text to this field such as I would like to take a bicycle to go around the city.</textarea>
+</fieldset>	
+</div>
+
+<div class="container">
+<fieldset>	
+	<legend>Dropdown box</legend>
+	<select name = "dropdown" multiple>
+		<option value = "Automation Tool" selected>Automation Tool</option>
+		<option value = "Katalon">Katalon</option>
+		<option value = "Selenium">Selenium</option>
+		<option value = "Appium">Appium</option>
+		<option value = "What">Else</option>
+	</select>
+	<br><br>
+	 <input list="browsers" name="browser">
+	 <datalist id="browsers">
+		<option value="Internet Explorer">
+		<option value="Firefox">
+		<option value="Chrome">
+		<option value="Opera">
+		<option value="Safari">
+	 </datalist>
+</fieldset>	
+</div>
+
+<div class="container">
+<fieldset>
+	<legend>Slider</legend>
+	<!-- <form oninput="x.value=parseInt(a.value)">
+		0<input type="range" id="a" name="a" value="50">100<br>
+		<output name="x" for="a"></output><br><br>
+	</form> -->
+	<div>
+		0<input type="range" min="1" max="100" value="50" class="slider" id="sldrange">100
+		<p>Value: <span id="sldvalue"></span></p>
+		<script>
+			var slider = document.getElementById("sldrange");
+			var output = document.getElementById("sldvalue");
+			output.innerHTML = slider.value;
+			slider.oninput = function() {
+			output.innerHTML = this.value;
+			}
+		</script>
+	</div>
+</fieldset>
+</div>
+
+<div class="container">
+<fieldset>
+	<legend>Load data</legend>
+	<a href="./dataload.html">Test Data Loading</a>
+</fieldset>
+</div>
+
+<div class="container"> 
+<fieldset>
+	<legend>Calendar</legend>
+	<p>Enter a date before 01-01-1980:</p>
+	<input type="date" name="bday" max="1979-12-31">
+	<p>Enter a date after 01-01-2000:</p>
+	<input type="date" name="bday" min="2000-01-02">
+	<p>Quantity (between 1 and 15):</p>
+	<input type="number" name="quantity" min="1" max="15">
+</fieldset>
+</div>
+
+
+<div class="container">
+<fieldset>	
+	<legend>iFrame</legend>
+	<p><a href="./ifr/wiki.html">Go to WiKis</a></p>
+	<p><a href="./ifr/components.html">Go to Test Page</a></p>
+</fieldset>	
+</div>
+
+<div class="container">
+<fieldset>	
+	<legend>Table</legend>
+	<p><a href="./table/table.html">Table Practice</a></p>
+</fieldset>	
+</div>
+
+<div class="container">
+<fieldset>	
+	<legend>Modal Dialog</legend>
+	<p><a href="./modal/modal.html">Modal Diaglog</a></p>
+</fieldset>	
+</div>
+
+<div class="container">
+<fieldset>	
+	<legend>TBD</legend>
+
+</fieldset>	
+</div>
+
+
+<form class="center linktext">
+	<a href="./about.html">About Us</a>
+</form>
+</body>
