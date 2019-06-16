@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+header {
+  text-align: center;
+  display: block;
+}
+/* The Modal (background) */
+/* The Modal (background) */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+#btnModal {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: relative;
+  left: 28px;
+  width: 280px;
+}
+
+#btnModal:hover {
+  opacity: 1;
+}
+
+/*Tool tip session*/
+/*Tool tip session*/
+/*Tool tip session*/
+.tooltip {    
+    position: absolute;
+    background: #646464;
+    border-radius:4px;
+    padding: 6px 12px;
+    font-family: arial;
+    font-size: 12px;
+    text-shadow: 0px 1px 1px #000;
+    color: #ffc64a;
+  }
+  .tooltip:before {
+    content : "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #646464;
+    position:absolute;
+    bottom:-5px;
+    left:5px;
+  }
+
+
+  /*Popup session*/
+  /*Popup session*/
+  /*Popup session*/
+* {box-sizing: border-box;}
+
+.open-button {
+  background-color: orange;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: relative;
+  left: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+<head><title>Page | Popovers Dialog Page</title></head>
+<body>
+  <header><h1>POPOVER COMPONENTS</h1></header>
+  <h2 class="Popovers" title="Click button to open popover">Animated Modal</h2>
+  <button id="btnModal">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="modalTag" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Welcome to Modal Dialog</h2>
+      </div>
+      <div class="modal-body">
+        <pre>This Modal dialog displays overlay current page.</pre>
+        <pre>Click outside to make it disappeared</pre>
+      </div>
+      <div class="modal-footer">
+        <h3>Try hard to get good experiences</h3>
+      </div>
+    </div>
+  </div>
+
+<br> <br> <br>
+<h2 class="Popovers" title="Click button to open popover">Popup Form</h2>
+<button class="open-button" onclick="openPopup()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Hello Popup</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <button type="button" class="btn">Like!</button>
+    <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("modalTag");
+var btn = document.getElementById("btnModal");
+var span = document.getElementsByClassName("close")[0];
+
+// Click the button to open modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Click on span X to close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Click anywhere outside of the modal to close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+// Create tooltip element
+var btnToolTips = document.querySelectorAll(".Popovers");
+for(var i=0; i < btnToolTips.length; i++){
+  var  btnToolTip = btnToolTips[i]
+  if(btnToolTip.title !== ''){
+    btnToolTip.addEventListener('mouseenter',createTip);
+    btnToolTip.addEventListener('mouseleave',cancelTip);
+  }
+}
+
+
+function createTip(ev){
+    var title = this.title;
+    this.title = '';
+    this.setAttribute("tooltip", title);
+    var tooltipWrap = document.createElement("div"); //creates div
+    tooltipWrap.className = 'tooltip'; //adds class
+    tooltipWrap.appendChild(document.createTextNode(title)); //add the text node to the newly created div.
+
+    var firstChild = document.body.firstChild;//gets the first elem after body
+    firstChild.parentNode.insertBefore(tooltipWrap, firstChild); //adds tt before elem 
+    var padding = 5;
+    var elProps = this.getBoundingClientRect();
+    var tooltipProps = tooltipWrap.getBoundingClientRect(); 
+    var topPos = elProps.top - (tooltipProps.height + padding);
+    tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+elProps.left+'px;');
+};  
+
+function cancelTip(ev){
+    var title = this.getAttribute("tooltip");
+    this.title = title;
+    this.removeAttribute("tooltip");
+    document.querySelector(".tooltip").remove();
+};
+
+function openPopup() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 4px;
+  background-color: #2196F3;
+  padding: 4px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.fToDown {
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+</style>
+</head>
+<body>
+
+<h1>The <em>grid-area</em> Table</h1>
+
+<div class="grid-container">
+  <div class="fToDown">Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>  
+  <div>Item 4</div>
+  <div>Item 5</div>
+  <div>Item 6</div>
+  <div>Item 7</div>
+</div>
+
+</body>
+</html>

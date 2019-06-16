@@ -1,0 +1,51 @@
+<style type="text/css">
+
+	
+/*a:link, a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}*/
+
+
+a:hover {
+  color: red;
+}
+
+/*.tbnLink {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}*/
+
+.clearance {
+	text-decoration: none;
+	padding: 15px 32px;
+}
+
+.button {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border: none;
+  /*padding: 15px 32px;*/
+  /*text-align: center;*/
+  /*display: inline-block;*/
+  /*font-size: 16px;*/
+  /*margin: 4px 2px;*/
+}
+
+</style>
+
+<head><title>Page | iFrame Language Page</title></head>
+<!-- <a id="en" class="clearance button" href="https://en.wikipedia.org" target="nd_iframe" onclick="this.classList.toggle('button'); getElementById('vn').classList.remove('button');">English</a>
+<a id ="vn" class="clearance" href="https://vi.wikipedia.org" target="nd_iframe" onclick="this.classList.toggle('button'); getElementById('en').classList.remove('button');">Vietnamese</a> -->
+
+<!-- <a href="#" class="tbnLink" onclick="this.classList.toggle('button');">Link Button</a> -->
+
+<a id="en" class="clearance button" href="https://en.wikipedia.org" target="nd_iframe" onclick="this.className += ' button'; getElementById('vn').classList.remove('button');">English</a>
+<a id ="vn" class="clearance" href="https://vi.wikipedia.org" target="nd_iframe" onclick="this.className += ' button'; getElementById('en').classList.remove('button');">Vietnamese</a>
