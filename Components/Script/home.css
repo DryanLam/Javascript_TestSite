@@ -14,13 +14,14 @@ Released   : 20120723
 	padding: 0;
 }
 
-a {
+a, a:visited {
 	text-decoration: underline;
 	color: #383838;
+	text-decoration: none;
 }
 
 a:hover {
-	text-decoration: none;
+	color: #FC4C1A;
 }
 
 body {
@@ -42,7 +43,7 @@ h1,h2,h3,h4 {
 }
 
 h2,h3,h4 {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 	font-family: Arvo, serif;
 	color: #000000;
 }
@@ -182,7 +183,7 @@ ul {
 }
 
 #logo h1 {
-	font-size: 2.25em;
+	/*font-size: 2.25em;*/
 	font-family: Arvo, serif;
 }
 
@@ -241,6 +242,11 @@ ul {
 	padding-left: 0;
 }
 
+#nav a:hover {
+	color: #F9BE02;
+	font-size: 20px;
+}
+
 #outer {
 	position: relative;
 	z-index: 3;
@@ -274,4 +280,40 @@ ul {
 	width: 250px;
 	float: left;
 	padding: 0;
+}
+
+/*  Snackbar   */
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: lightblue;
+  border: 3px solid #00687D;
+  color: #3C3C3C;
+  font-family: Arvo, serif;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 4;
+  left: 50%;
+  top: 90%;
+  font-size: 17px;
+  transform: translate(-50%,-50%);
+}
+
+.show{
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {top: 100%; opacity: 0;}
+  to {top: 90%; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {top: 90%; opacity: 1;}
+  to {top: 100%; opacity: 0;}
 }
