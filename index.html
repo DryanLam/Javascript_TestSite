@@ -1,241 +1,164 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black;
-}
-
-form, div.container{
-  padding: 16px;
-  background-color: white;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 30%;
-  min-width: 150px;
-  padding: 10px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Set a style for the submit button */
-.signin {
-  background-color: #27AE60;
-  color: white;
-  padding: 10px 10px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-
-  position: relative;
-  left: 12%;
-  translate(-50%, -50%);
-}
-
-.signin:hover {
-	background-color: #229954;
-	opacity: 1;
-}
-
-.center {
-  text-align: center;
-}
-
-.linktext {
-  color: dodgerblue;
-}
-
-/* Set a style for the slider bar*/
-.slider {
-  -webkit-appearance: none;
-  width: 30%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-/* Set a style for the slider thumb*/
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4CAF50;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 3px #CCC, inset 0 0 4px #CCC, inset 0 0 0 3px #CCC;
-  opacity: 0.8;
-}
-
-.slider::-webkit-slider-thumb:hover { 
-	background: darkgreen;
-	opacity: 1;
-}
-
-/*For link*/
-a:link, a:visited {
-  color: blue;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-.regLink{
-	font-size: 15px;
-	position: absolute;
-	left: 12%;
-	margin-left: -20px
-
-}
-
-</style>
-<head><title>Page | Home Page</title></head>
-<body>
-<form action="./Components/Page/signin.html" method="get">
-	<fieldset>
-		<legend>Sign In</legend>
-		<label for="email"><b>Email</b></label></br><input type="text" placeholder="Enter Email" name="email"></br>
-		<label for="username"><b>User Name</b></label></br><input type="text" id="username" name="username" placeholder="Username" required></br>
-		<label for="password"><b>Password</b></label></br><input type="password" id="password" placeholder="Password" required></br>
-		<!-- <input type="submit" class="signin" value="Sign In"></br> -->
-		<!-- <input type="submit" class="signin" value="Sign In" onclick="showName()"></br> -->
-		<input type="submit" class="signin" value="Sign In"></br>
-		<a href="#" class="regLink">Create your account. Go!</a></br>
-	</fieldset>
-	</div>
-</form>
-<div class="container"> 
-<fieldset>
-	<legend>Radio button</legend>
-	<input type="radio" name="gender" value="male" checked> Male<br>
-	<input type="radio" name="gender" value="female"> Female<br>
-	<input type="radio" name="gender" value="other"> Other
-</fieldset>
-</div>
-
-<div class="container"> 
-<fieldset>
-	<legend>Check box</legend>
-	<p>I have:</p>
-	<input type="checkbox" name="vehicle1" value="Bike">Bicycle<br>
-	<input type="checkbox" name="vehicle2" value="Car">Car<br></br>
-	<textarea rows="10" cols="50">This section encourages you to enter any text to this field such as I would like to take a bicycle to go around the city.</textarea>
-</fieldset>	
-</div>
-
-<div class="container">
-<fieldset>	
-	<legend>Dropdown box</legend>
-	<select name = "dropdown" multiple>
-		<option value = "Automation Tool" selected>Automation Tool</option>
-		<option value = "Katalon">Katalon</option>
-		<option value = "Selenium">Selenium</option>
-		<option value = "Appium">Appium</option>
-		<option value = "What">Else</option>
-	</select>
-	<br><br>
-	 <input list="browsers" name="browser">
-	 <datalist id="browsers">
-		<option value="Internet Explorer">
-		<option value="Firefox">
-		<option value="Chrome">
-		<option value="Opera">
-		<option value="Safari">
-	 </datalist>
-</fieldset>	
-</div>
-
-<div class="container">
-<fieldset>
-	<legend>Slider</legend>
-	<!-- <form oninput="x.value=parseInt(a.value)">
-		0<input type="range" id="a" name="a" value="50">100<br>
-		<output name="x" for="a"></output><br><br>
-	</form> -->
-	<div>
-		0<input type="range" min="1" max="100" value="50" class="slider" id="sldrange">100
-		<p>Value: <span id="sldvalue"></span></p>
-		<script>
-			var slider = document.getElementById("sldrange");
-			var output = document.getElementById("sldvalue");
-			output.innerHTML = slider.value;
-			slider.oninput = function() {
-			output.innerHTML = this.value;
-			}
-		</script>
-	</div>
-</fieldset>
-</div>
-
-<div class="container">
-<fieldset>
-	<legend>Load data</legend>
-	<a href="./Components/Page/dataload.html">Test Data Loading</a>
-</fieldset>
-</div>
-
-<div class="container"> 
-<fieldset>
-	<legend>Calendar</legend>
-	<p>Enter a date before 01-01-1980:</p>
-	<input type="date" name="bday" max="1979-12-31">
-	<p>Enter a date after 01-01-2000:</p>
-	<input type="date" name="bday" min="2000-01-02">
-	<p>Quantity (between 1 and 15):</p>
-	<input type="number" name="quantity" min="1" max="15">
-</fieldset>
-</div>
-
-
-<div class="container">
-<fieldset>	
-	<legend>iFrame</legend>
-	<p><a href="./Components/Page/ifr/wiki.html">Go to WiKis</a></p>
-	<p><a href="./Components/Page/ifr/components.html">Go to Test Page</a></p>
-</fieldset>	
-</div>
-
-<div class="container">
-<fieldset>	
-	<legend>Table</legend>
-	<p><a href="./Components/Page/table/table.html">Table Practice</a></p>
-</fieldset>	
-</div>
-
-<div class="container">
-<fieldset>	
-	<legend>Popovers</legend>
-	<p><a href="./Components/Page/popovers/modal.html">Popovers Page</a></p>
-</fieldset>	
-</div>
-
-<div class="container">
-<fieldset>	
-	<legend>TBD</legend>
-
-</fieldset>	
-</div>
-
-
-<form class="center linktext">
-	<a href="./Components/Page/about.html">About Us</a>
-</form>
-</body>
+<!DOCTYPE>
+<html>
+	<head>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>
+			Page | Home Page
+		</title>
+		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="./Components/Script/home.css" />
+	</head>
+	<body>
+		<div id="bg1"></div>
+		<div id="bg2"></div>
+		<div id="outer">
+			<div id="header">
+				<div id="logo">
+					<h1>
+						<a href="#">Offline Channel</a>
+					</h1>
+				</div>
+				<div id="search">
+					<form action="" method="post">
+						<div>
+							<input class="text" name="search" size="32" maxlength="64" />
+						</div>
+					</form>
+				</div>
+				<div id="nav">
+					<ul>
+						<li class="first">
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Blog</a>
+						</li>
+						<li>
+							<a href="#">Tips</a>
+						</li>
+						<li>
+							<a href="testsite.html">Sites</a>
+						</li>
+						<li>
+							<a href="./Components/Page/about.html">About</a>
+						</li>
+						<li class="last">
+							<a href="#">Contact</a>
+						</li>
+					</ul><br class="clear" />
+				</div>
+			</div>
+			<div id="banner">
+				<div class="captions">
+					<h2>A Journey Of A Thousand Miles Begins With A Single Step.</h2>
+				</div>
+				<img src="images/banner.jpg" alt="" />
+			</div>
+			<div id="main">
+				<div id="sidebar">
+					<div class="box">
+						<h3>
+							RECENT
+						</h3>
+						<div class="dateList">
+							<ul class="linkedList dateList">
+								<li class="first">
+									<span class="date">Jul 23</span> <a href="#">Ante sed fringilla</a>
+								</li>
+								<li>
+									<span class="date">Jul 18</span> <a href="#">Turpis dolor risus</a>
+								</li>
+								<li>
+									<span class="date">Jul 7</span> <a href="#">Nunc venenatis iaculis</a>
+								</li>
+								<li>
+									<span class="date">Jul 2</span> <a href="#">Lorem ipsum etiam</a>
+								</li>
+								<li>
+									<span class="date">Jun 28</span> <a href="#">Sed phaslleus dolor</a>
+								</li>
+								<li class="last">
+									<span class="date">Jun 24</span> <a href="#">Arcu phasellus</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="box">
+						<h3>
+							RELATED
+						</h3>
+						<p>
+							Lectus venenatis pharetra mauris nisl cum neque adipiscing. Turpis ridiculus leo scelerisque.
+						</p>
+						<ul class="linkedList">
+							<li class="first">
+								<a href="#">Luctus curae vitae</a>
+							</li>
+							<li>
+								<a href="#">Duis justo parturient lectus</a>
+							</li>
+							<li>
+								<a href="#">Nullam fermentum cras sociis</a>
+							</li>
+							<li class="last">
+								<a href="#">Natoque sapien suscipit</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="content">
+					<div class="box">
+						<h2>
+							Welcome to Offline Channel
+						</h2>
+						<img src="images/pic01.jpg" width="150" height="150" alt="" class="left" />
+						<p>
+							This is <strong>Offline Channel</strong>, a free, fully standards-compliant CSS template 
+							by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The images used in this 
+							template are from <a href="http://fotogrph.com/">Fotogrph</a>. This free template is released 
+							under a <a href="http://templated.co/license">Creative Commons Attribution</a> 
+							license, so you're pretty much free to do whatever you want with it (even use it commercially) 
+							provided you give us credit for it.. Have fun :)
+						</p>
+					</div>
+					<div class="box">
+						<h3>
+							Test Hub
+						</h3>
+						<p>
+							Tristique feugiat natoque gravida quisque odio. Ipsum mus vitae suspendisse sit mattis curabitur elit. 
+							Eleifend penatibus a curabitur nulla. Ultricies praesent rutrum justo. Congue vulputate lacinia ornare 
+							tortor purus dolor eleifend. Semper dui tincidunt id dictum quam. Phasellus tristique libero tristique.
+							Eleifend penatibus a curabitur nulla. Ultricies praesent rutrum justo. Congue vulputate lacinia ornare 
+							tortor purus dolor eleifend. Semper dui tincidunt id dictum quam. Phasellus tristique libero tristique.
+							Eleifend penatibus a curabitur nulla. Ultricies praesent rutrum justo. Congue vulputate lacinia ornare 
+							tortor purus dolor eleifend. Semper dui tincidunt id dictum quam. Phasellus tristique libero tristique.
+						</p>
+						<ul class="linkedList">
+							<li class="first">
+								<a href="#">Turpis et posuere urna dolor justo</a>
+							</li>
+							<li>
+								<a href="#">Fringilla sem nisl purus lobortis magnis magna pellentesque</a>
+							</li>
+							<li>
+								<a href="#">Venenatis magna ultricies sollicitudin sodales commodo nibh aenean</a>
+							</li>
+							<li>
+								<a href="#">Magnis luctus penatibus non natoque nascetur tempus erat</a>
+							</li>
+							<li class="last">
+								<a href="#">Penatibus dolor pharetra viverra ac erat proin</a>
+							</li>
+						</ul>
+					</div><br class="clear" />
+				</div><br class="clear" />
+			</div>
+		</div>
+		<div id="copyright">
+			&copy; 2019. Built by <a href="./Components/Page/about.html" rel="nofollow" style="text-decoration: none;color:blue">Dryan Lam | Dung Lam</a>.
+		</div>
+	</body>
+</html>
