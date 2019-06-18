@@ -259,11 +259,15 @@ ul {
 }
 
 #search input.text {
-	padding: 10px 40px 10px 10px;
-	background: #ffffff url(images/search.png) top right no-repeat;
+	padding: 15px 40px 10px 10px;
+	background: #ffffff url(../../images/search.png) bottom right no-repeat;
 	border: 0;
 	width: 250px;
 	color: #777;
+}
+
+#search input.text:hover {
+	border: 1px solid lightblue;
 }
 
 #sidebar {
