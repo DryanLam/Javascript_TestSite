@@ -87,6 +87,7 @@ ul {
 	left: 0;
 	top: 0;
 	width: 100%;
+	min-width: 1182px;
 	height: 542px;
 	background: #ccc;
 	z-index: 1;
@@ -98,19 +99,21 @@ ul {
 	left: 0;
 	top: 0;
 	width: 100%;
+	min-width: 1182px;
 	height: 243px;
 	background: #262626;
 	z-index: 2;
 	box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
 }
 
-@media only screen and (max-device-width: 1182px) {
+/*@media only screen and (max-device-width: 1182px) {
 	#bg1, #bg2 {display:none;}
-}
+}*/
 
 #banner {
 	position: relative;
-	width: 1180px;
+	min-width: 1180px;
+	width:100%;
 	height: 300px;
 }
 
@@ -202,13 +205,12 @@ ul {
 
 #nav {
 	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 0 28px 0 28px;
-	width: 1124px;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
 	height: 48px;
 	line-height: 48px;
-	margin: 0 0 28px 0;
 	background: #007289;
 	font-size: 0.9em;
 	border-bottom: solid 1px #009FBF;
@@ -224,6 +226,7 @@ ul {
 
 #nav ul {
 	list-style: none;
+	padding-left: 25px;
 }
 
 #nav ul li {
@@ -243,7 +246,8 @@ ul {
 #outer {
 	position: relative;
 	z-index: 3;
-	width: 1180px;
+	min-width: 1180px;
+	width: 80%;
 	margin: 60px auto 0 auto;
 	background: #ffffff;
 	box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.2);
