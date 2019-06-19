@@ -203,7 +203,7 @@ ul {
 	border-top: 0;
 }
 
-#nav-old, .navbar {
+.navbar {
 	position: absolute;
 	top: 0;
 	left: 50%;
@@ -252,26 +252,6 @@ ul {
 	margin: 60px auto 0 auto;
 	background: #ffffff;
 	box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.2);
-}
-
-#search-old {
-	position: relative;
-	top: 30%;
-	right: 28px;
-	height: 138px;
-	line-height: 138px;
-}
-
-#search input.text {
-	position: absolute;
-	top: 50%;
-	right: 30px;
-	padding: 10px 50px 10px 10px;
-	background: #ffffff url(../../images/search.png) center right no-repeat;
-	border: 0;
-	width: 300px;
-	color: #777;
-	border-radius: 50px;
 }
 
 #searchbox{
