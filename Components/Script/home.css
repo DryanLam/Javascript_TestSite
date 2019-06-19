@@ -86,7 +86,7 @@ ul {
 	position: absolute;
 	left: 0;
 	top: 0;
-	min-width: 1180px;
+	min-width: 1080px;
 	width: 100%;
 	height: 542px;
 	background: #ccc;
@@ -98,7 +98,7 @@ ul {
 	position: absolute;
 	left: 0;
 	top: 0;
-	min-width: 1180px;
+	min-width: 1080px;
 	width: 100%;
 	height: 243px;
 	background: #262626;
@@ -106,13 +106,10 @@ ul {
 	box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
 }
 
-/*@media only screen and (max-device-width: 1182px) {
-	#bg1, #bg2 {display:none;}
-}*/
 
 #banner {
 	position: relative;
-	/*width: 1180px;*/
+	/*width: 1080px;*/
 	width:100%;
 	height: 300px;
 }
@@ -139,20 +136,25 @@ ul {
 }
 
 #content {
-	/*width: 854px;*/
 	position: relative;
-	width:100%;
-	/*margin: 0 0 0 270px;*/
-	/*padding-left: 200px;*/
+	top:5px;
+	width:76%;
+	margin: 0 0 0 270px;
 	left: 20px;
-	display: inline;
+	/*display: inline;*/
 }
+
+@media only screen and (max-device-width: 1080px) {
+	#sidebar {display:none;}
+	#content {display: inline;}
+}
+
 
 #copyright {
 	padding: 40px 0 40px 0;
 	text-align: center;
 	color: #777777;
-	/*min-width: 1180px;*/
+	/*min-width: 1080px;*/
 	width: 100%;
 }
 
@@ -192,8 +194,7 @@ ul {
 #main {
 	position: relative;
 	padding: 60px 28px 0px 28px;
-	/*min-width: 1180px;*/
-	width: 90%;
+	width: 92%;
 }
 
 #main ul {
@@ -201,8 +202,11 @@ ul {
 }
 
 #main ul li {
-	padding: 8px 0 8px 0;
+	padding: 8px 10px 8px 0;
 	border-top: solid 1px #d1d1d1;
+
+	  /*display: inline-block;*/
+  position: relative;
 }
 
 #main ul li.first {
@@ -216,7 +220,7 @@ ul {
 	left: 50%;
 	transform: translate(-50%);
 	/*padding: 0 28px 0 28px;*/
-	min-width: 1180px;
+	min-width: 1080px;
 
 	width:100%;
 
@@ -258,7 +262,7 @@ ul {
 #outer {
 	position: relative;
 	z-index: 3;
-	min-width: 1180px;
+	min-width: 1080px;
 	width:90%;
 	margin: 50px auto 0 auto;
 	background: #ffffff;
@@ -288,13 +292,10 @@ ul {
 	max-width: 250px;
 	width: 25%;
 	float: left;
+	position: relative;
+	top:5px;
 	padding: 0;
 }
-
-@media only screen and (max-device-width: 1080px) {
-	#sidebar {display:none;}
-}
-
 
 /*  Snackbar   */
 .snackbar {
