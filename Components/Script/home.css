@@ -204,9 +204,11 @@ ul {
 }
 
 #nav {
-	position: absolute;
-	top: 0;
-	left: 0;
+	/*position: absolute;*/
+	position: fixed;
+	top: 60px;
+	left: 50%;
+	transform: translate(-50%);
 	padding: 0 28px 0 28px;
 	width: 1124px;
 	height: 48px;
@@ -217,6 +219,7 @@ ul {
 	border-bottom: solid 1px #009FBF;
 	border-top: solid 1px #1098B3;
 	box-shadow: inset 0px -10px 40px 0px #005B6D;
+	z-index: 6;
 }
 
 #nav a {

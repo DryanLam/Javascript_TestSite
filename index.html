@@ -160,6 +160,17 @@
 				x.className += " show";
 				setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 			};
+
+			window.onscroll = function() {fixedNavBar()};
+
+			// Fixed Navbar
+			function fixedNavBar() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    document.getElementById("nav").style.top = "0";
+			  } else {
+			    document.getElementById("nav").style.top = "60px";
+			  }
+			}
 		</script>
 	</body>
 </html>
