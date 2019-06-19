@@ -86,6 +86,7 @@ ul {
 	position: absolute;
 	left: 0;
 	top: 0;
+	min-width: 1180px;
 	width: 100%;
 	height: 542px;
 	background: #ccc;
@@ -97,6 +98,7 @@ ul {
 	position: absolute;
 	left: 0;
 	top: 0;
+	min-width: 1180px;
 	width: 100%;
 	height: 243px;
 	background: #262626;
@@ -104,9 +106,9 @@ ul {
 	box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
 }
 
-@media only screen and (max-device-width: 1182px) {
+/*@media only screen and (max-device-width: 1182px) {
 	#bg1, #bg2 {display:none;}
-}
+}*/
 
 #banner {
 	position: relative;
