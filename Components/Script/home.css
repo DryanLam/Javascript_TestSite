@@ -254,24 +254,43 @@ ul {
 	box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.2);
 }
 
-#search {
-	position: absolute;
-	bottom: 0;
+#search-old {
+	position: relative;
+	top: 30%;
 	right: 28px;
 	height: 138px;
 	line-height: 138px;
 }
 
 #search input.text {
-	padding: 15px 40px 10px 10px;
-	background: #ffffff url(../../images/search.png) bottom right no-repeat;
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	padding: 10px 50px 10px 10px;
+	background: #ffffff url(../../images/search.png) center right no-repeat;
 	border: 0;
-	width: 250px;
+	width: 300px;
 	color: #777;
+	border-radius: 50px;
 }
 
-#search input.text:hover {
-	border: 1px solid lightblue;
+#searchbox{
+	position: absolute;
+	background: #ffffff url(../../images/search.png) 98% 50% no-repeat;
+	top:50%;
+	right: 30px;
+  	width: 30%;
+  	max-width: 300px;
+  	color: #777;
+  	padding: 10px 60px 10px 10px;
+  	border: none;
+  	border-radius: 50px;
+  	z-index: 7;
+}
+
+#searchbox:hover, #searchbox:focus {
+	border: 2px solid orange;
+	outline: none;
 }
 
 #sidebar {
