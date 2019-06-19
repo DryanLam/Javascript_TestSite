@@ -165,10 +165,12 @@
 
 			// Fixed Navbar
 			function fixedNavBar() {
+				var x = document.getElementById("nav")
 			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			    document.getElementById("nav").style.top = "0";
+			    x.style.top = "0";
+			    x.style.background = "rgb(0,114,137,0.5)";
 			  } else {
-			    document.getElementById("nav").style.top = "60px";
+			    x.style.top = "60px";
 			  }
 			}
 		</script>
