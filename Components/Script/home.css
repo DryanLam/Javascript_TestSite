@@ -203,10 +203,9 @@ ul {
 	border-top: 0;
 }
 
-#nav {
-	/*position: absolute;*/
-	position: fixed;
-	top: 60px;
+#nav-old, .navbar {
+	position: absolute;
+	top: 0;
 	left: 50%;
 	transform: translate(-50%);
 	padding: 0 28px 0 28px;

@@ -27,7 +27,7 @@
 						</div>
 					</form>
 				</div>
-				<div id="nav">
+				<div id="nav" class="navbar">
 					<ul>
 						<li class="first">
 							<a href="#">Home</a>
@@ -166,11 +166,11 @@
 			// Fixed Navbar
 			function fixedNavBar() {
 				var x = document.getElementById("nav")
-			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			    x.style.top = "0";
-			    x.style.background = "rgb(0,114,137,0.5)";
+				if(window.pageYOffset >= 60){
+			    	x.style.position = "fixed";
 			  } else {
-			    x.style.top = "60px";
+			    	x.style.position = "absolute";
+			    	x.style.background = "rgb(0,114,137,0.5)";
 			  }
 			}
 		</script>
