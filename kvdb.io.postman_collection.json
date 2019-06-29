@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "a74a1b12-784b-4665-8a50-20cd279e88f8",
+		"name": "kvdb.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Bucket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://kvdb.io?secret_key=lamtandung",
+					"protocol": "https",
+					"host": [
+						"kvdb",
+						"io"
+					],
+					"query": [
+						{
+							"key": "secret_key",
+							"value": "lamtandung"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Source",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kvdb.io/RmBKgzUM9XjrkaQkaDZV1W/",
+					"protocol": "https",
+					"host": [
+						"kvdb",
+						"io"
+					],
+					"path": [
+						"RmBKgzUM9XjrkaQkaDZV1W",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Source and Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"Any kind of data\""
+				},
+				"url": {
+					"raw": "https://kvdb.io/RmBKgzUM9XjrkaQkaDZV1W/source",
+					"protocol": "https",
+					"host": [
+						"kvdb",
+						"io"
+					],
+					"path": [
+						"RmBKgzUM9XjrkaQkaDZV1W",
+						"source"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Source Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kvdb.io/RmBKgzUM9XjrkaQkaDZV1W/source",
+					"protocol": "https",
+					"host": [
+						"kvdb",
+						"io"
+					],
+					"path": [
+						"RmBKgzUM9XjrkaQkaDZV1W",
+						"source"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
