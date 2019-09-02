@@ -2,16 +2,18 @@
 <head>
 <title>Page | Login Form</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="action.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
 <body>
     <div class="loginbox">
     <img src="./image/icon/login-avatar.png" class="avatar">
         <h1>User Login</h1>
-        <form>
+        <form id="oLoginForm" action="javascript:oAuthRC()" method="post">
             <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username">
+            <input id="username" type="text" name="username" placeholder="Enter Username">
             <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login">
+            <input id="password" type="password" name="password" placeholder="Enter Password">
+            <input id="submit" type="submit" name="" value="Login">
             <a href="#">Forgot password?</a><br>
             <a href="#">Register</a>
         </form>
