@@ -22,8 +22,6 @@ function oAuth(){
 	// Storage session user name
     sessionStorage.oAuthSession = obj.username;
     // sessionStorage.setItem("oAuthSession",JSON.stringify(obj.username));
-    // var passhash = CryptoJS.MD5("admin").toString().toUpperCase();
-
 
 	if (obj.password == "21232F297A57A5A743894A0E4A801FC3"){
 		alert ("Login successfully");
