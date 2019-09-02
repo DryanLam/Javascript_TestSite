@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Animation Text</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
 
-<div class="container">
-  <span class="text1">Welcome To</span>
-  <span class="text2">Automation Testing</span>
-</div>
-
-
-
-  </body>
+	<script>
+		var isAuthen = sessionStorage.isAuthen;
+		function loadPage(){
+			var newDocument = '<head><meta charset="utf-8"><title>Animation Text</title><link rel="stylesheet" href="style.css"></head><body><div class="container"><span class="text1">Welcome To</span><span class="text2">Automation Testing</span></div></body>';
+			if(isAuthen){
+				document.documentElement.innerHTML = newDocument;
+			}else{
+			}
+		}
+		window.onload = loadPage();
+	</script>
 </html>
