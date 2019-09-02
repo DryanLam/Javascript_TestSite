@@ -107,14 +107,18 @@ a:hover {
 }
 
 </style>
-<head><title>Page | Home Page</title></head>
+<head>
+	<title>Page | Home Page</title>
+	<script type="text/javascript" src="../Script/action.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+</head>
 <body>
-<form action="signin.html" method="get">
+<form id="loginForm" action="javascript:oAuth()" method="post">
 	<fieldset>
 		<legend>Sign In</legend>
 		<label for="email"><b>Email</b></label></br><input type="text" placeholder="Enter Email" name="email"></br>
 		<label for="username"><b>User Name</b></label></br><input type="text" id="username" name="username" placeholder="Username" required></br>
-		<label for="password"><b>Password</b></label></br><input type="password" id="password" placeholder="Password" required></br>
+		<label for="password"><b>Password</b></label></br><input type="password" id="password" name="password" placeholder="Password" required></br>
 		<!-- <input type="submit" class="signin" value="Sign In"></br> -->
 		<!-- <input type="submit" class="signin" value="Sign In" onclick="showName()"></br> -->
 		<input type="submit" class="signin" value="Sign In"></br>

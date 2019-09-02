@@ -27,11 +27,24 @@ return false;
 
 //-----------
 // https://stackoverflow.com/questions/29986657/persist-variables-between-page-loads
-//set
+//set local
 localStorage.setItem('myObject', JSON.stringify(myObject));
 
 //get
 var myObject = JSON.parse(localStorage.getItem('myObject'));
+
+// clear 
+window.localStorage.clear();
+
+//----------
+// Session storage
+sessionStorage.SessionName = "SessionData";
+
+sessionStorage.getItem("SessionName");
+
+sessionStorage.setItem("SessionName","SessionData");
+
+
 
 //----------
 $('input[type="submit"][value="Search"]').click(function() {
