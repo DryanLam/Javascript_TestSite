@@ -9,6 +9,7 @@
 		</title>
 		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="./Components/Script/home.css" />
+		
 	</head>
 	<body>
 		<div id="bg1"></div>
@@ -20,31 +21,44 @@
 						<a href="#"><span style="font-size: 50px;">Auto-Test</span> <span style="text-transform:none;font-family: Arvo, serif;font-size: 25px;">Channel</span></a>
 					</h1>
 				</div>
-				<!-- <div id="search"> -->
 					<form action="" method="post">
-						<!-- <input class="text-k" type="text" name="search" size="32" maxlength="64" /> -->
 						<input type="text" id="searchbox" >
 					</form>
-				<!-- </div> -->
 				<div id="nav" class="navbar">
 					<ul>
 						<li class="first">
-							<a href="#">Home</a>
+							<div>
+								<a href="#"><label>Home</label></a>
+							</div>
 						</li>
 						<li>
-							<a href="#">Blog</a>
+							<div>
+								<a href="#">Blog</a>
+							</div>
 						</li>
 						<li>
-							<a href="#">Tips</a>
+							<div>
+								<a href="#">Tips</a>
+							</div>
 						</li>
 						<li>
-							<a href="testsite.html">Test Site</a>
+							<div class="dropdown">
+									<a href="#">Test Site</a>
+									<div class="dropdown-content">
+									  <a href="./Components/Page/testsite.html">Web Components</a>
+									  <a href="./Components/Page/login/login.html">Web Pages</a>
+									</div>
+							</div>
 						</li>
 						<li>
-							<a href="./Components/Page/about.html">About</a>
+							<div>
+								<a href="./Components/Page/about.html">About</a>
+							</div>
 						</li>
 						<li class="last">
-							<a href="#">Contact</a>
+							<div>
+								<a href="#">Contact</a>
+							</div>
 						</li>
 					</ul><br class="clear" />
 				</div>

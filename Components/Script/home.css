@@ -205,8 +205,8 @@ ul {
 	padding: 8px 10px 8px 0;
 	border-top: solid 1px #d1d1d1;
 
-	  /*display: inline-block;*/
-  position: relative;
+	/*display: inline-block;*/
+	position: relative;
 }
 
 #main ul li.first {
@@ -214,19 +214,16 @@ ul {
 	border-top: 0;
 }
 
+/* Navigation bar */
 .navbar {
 	position: absolute;
 	top: 0%;
 	left: 50%;
 	transform: translate(-50%);
-	/*padding: 0 28px 0 28px;*/
 	min-width: 1080px;
-
 	width:100%;
-
 	height: 48px;
 	line-height: 48px;
-	/*margin: 0 0 28px 0;*/
 	background: rgb(0,114,137);
 	font-size: 0.9em;
 	border-bottom: solid 1px #009FBF;
@@ -245,9 +242,10 @@ ul {
 	list-style: none;
 }
 
-#nav ul li {
+#nav ul li{
 	display: inline;
 	padding: 0 12px 0 12px;
+	float: left;
 }
 
 #nav ul li.first {
@@ -258,6 +256,40 @@ ul {
 	color: #F9BE02;
 	font-size: 20px;
 }
+
+/* Drop down navigation bar */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #0a7f99;
+	min-width: 100px;
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 0px 20px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	font-size: 14px !important;
+}
+
+.dropdown-content a:hover {
+	background-color: rgb(0, 128, 128,0.7);
+	color: black;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+/* End navigation bar*/
 
 #outer {
 	position: relative;
