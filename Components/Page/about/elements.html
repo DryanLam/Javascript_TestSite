@@ -26,7 +26,9 @@
 			    x.disabled = true;
 			    x.className = "genric-btn danger-border border circle disable";
 			    x.innerHTML = "Deleted";
-			}
+			};
+
+			function saveForm(){};
 
 			window.onload = loadPage();
 
@@ -364,6 +366,7 @@
 						</div>
 					</div>
 					<div class="section-top-border">
+					<fieldset style="border: 2px solid blue;border-radius: 10px; padding: 20px;">
 						<div class="row">
 							<div class="col-lg-8 col-md-8">
 								<h3 class="mb-30">Form Element</h3>
@@ -538,6 +541,10 @@
 								</div>
 							</div>
 						</div>
+						<div class="button-group-area text-center mt-10 ">
+							<button onclick="saveForm()" class="genric-btn primary-border circle">Save</button>
+						</div>
+					</fieldset>
 					</div>
 				</div>
 			</div>
