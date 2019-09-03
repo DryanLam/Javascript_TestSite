@@ -962,8 +962,56 @@ ul li:last-child {
 }
 
 
+<!-- Download button - Save file-->
+<head>
+    <title>Page | Download</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+</head>
+<body>
+  <button id="download" onclick="download()">File Save</button>
+  <script>
+    function download() {
 
+        var jsonObject = {
+            "name": "John",
+            "age": 31,
+            "city": "New York"
+          };
+            var fileContents=JSON.stringify(jsonObject, null, 2);
+            var fileName= "data.json";
+
+            var pp = document.createElement('a');
+            pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContents));
+            pp.setAttribute('download', fileName);
+            pp.click();
+        };
+
+        // Run on load page
+        // setTimeout(function() {download()}, 500);
+
+        // Jquerys
+    // $('#download').on("click", function() {
+    //    function download() {
+    //      var jsonObject = {
+    //        "name": "John",
+    //        "age": 31,
+    //        "city": "New York"
+    //      };
+
+    //      var fileContents = JSON.stringify(jsonObject, null, 2);
+    //      var fileName = "data.json";
+
+    //      var pp = document.createElement('a');
+    //      pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContents));
+    //      pp.setAttribute('download', fileName);
+    //      pp.click();
+    //    }
+
+    //    setTimeout(function() {download()}, 500);
+    //  });
+  </script>
+</body>
 
 
 
