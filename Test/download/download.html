@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Page | Download</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+							<pre style="font-size: 20px; font-family: 'Palatino Linotype';">
+										        	 TỪ ẤY
+
+										Từ ấy trong tôi bừng nắng hạ
+										Mặt trời chân lý chói qua tim
+										Hồn tôi là một vườn hoa lá
+										Rất đậm hương và rộn tiếng chim...
+
+										Tôi buộc lòng tôi với mọi người
+										Để tình trang trải với trăm nơi
+										Để hồn tôi với bao hồn khổ
+										Gần gũi nhau thêm mạnh khối đời
+
+										Tôi đã là con của vạn nhà
+										Là em của vạn kiếp phôi pha
+										Là anh của vạn đầu em nhỏ
+										Không áo cơm, cù bất cù bơ...
+						</pre> 
+	<button id="download" onclick="download()">File Save</button>
+	<script>
+		function download() {
+
+		    var jsonObject = {
+			      "name": "John",
+			      "age": 31,
+			      "city": "New York"
+			    };
+			var poem = document.getElementsByTagName('pre')[0].innerHTML;
+            // var fileContents = JSON.stringify(jsonObject, null, 2);
+            var fileContents = poem;
+            var fileName= "data.txt";
+
+            var pp = document.createElement('a');
+            pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContents));
+            pp.setAttribute('download', fileName);
+            pp.click();
+        };
+	</script>
+</body>
+</html>
