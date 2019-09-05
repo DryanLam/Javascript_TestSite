@@ -2,33 +2,40 @@
 var FAILED_TIMES = 3;
 
 function main(){
-	// doGet();
-	doPost_011();
+	fetchGet();
+	// fetchPost();
 	// window.location.replace("signin.html");
 }
 
-function doPost_011(){
-	var url = 'https://api.keyvalue.xyz/c6edcaea/dunglam';
-   // // The data we are going to send in our request
-   let data = {name: 'nao lai'}
+
+// Cool
+function fetchPost(){
+	let url = 'https://api.keyvalue.xyz/new/dunglam';
+	// let dat = {name: 'okie'};
    
-   var request = new Request(url, {
-	method: 'POST', 
-	body: JSON.stringify(data), 
-	headers: {'Content-Type': 'application/json'}
+	let header = new Headers({
+		// 'Content-Type': 'multipart/form-data',
+		'Content-Type': 'text/plain',
 	});
 
-	fetch(request)
-	.then(function(resp) {
-		console.log(resp);
+	var request = new Request(url, {
+		method: 'POST', 
+		headers: header,
+		// body: JSON.stringify(data), 
 	});
+	const decoder = new TextDecoder('utf-8')
+	fetch(request)
+	.then((response) => response.body
+								.getReader()
+								.read()
+								.then(({value, done}) => decoder.decode(value)))
+	.then(result => {console.log(result)})
+	.catch(error => {console.log(error);});
 }
 
 
-
-
 // Cool
-function doGet(){
+function fetchGet(){
 	const url = 'https://randomuser.me/api/?results=10';
 
 	fetch(url)
@@ -36,6 +43,9 @@ function doGet(){
 	.then(data => {console.log(data.results);})
 	.catch(error => {console.log(error);});
 }
+
+
+
 // Be careful return if use .then(resp =>{return resp.json();})
 
 function doPost(){
@@ -236,7 +246,7 @@ function doPost_02(){
 }
 
 // Vanilla post
-function doPost_0112(){
+function doPost_03(){
 	var url = 'https://api.keyvalue.xyz/c6edcaea/dunglam';
    // // The data we are going to send in our request
    let data = "{name: 'tao dang test'}"
@@ -255,6 +265,228 @@ function doPost_0112(){
    http.send(params);
 }
 
+// work well
+function doPost_04(){
+	var url = 'https://api.keyvalue.xyz/c6edcaea/dunglam';
+	// The data we are going to send in our request
+	var data = {name: 'test quai'}
+
+	var url = 'https://httpbin.org/post'
+
+	fetch(url, {
+		method: 'post',
+		headers: {
+			'Accept': 'application/json, text/plain, */*',
+			'Content-Type': 'application/json'
+		},
+	body: JSON.stringify(data)}).
+	then(res=>res.json()).
+	then(res => console.log(res));
+}
+
+
+// Work well
+function doPost_05(){
+	var url = 'https://api.keyvalue.xyz/new/dunglam';
+   // // The data we are going to send in our request
+   var data = {name: 'okie'}
+   
+  var request = new Request(url, {
+	method: 'POST', 
+	redirect: 'follow',
+	mode: 'cors',
+	// body: JSON.stringify(data), 
+	headers:  new Headers({
+		'Content-Type': 'multipart/form-data',
+		// 'Content-Type': 'application/json',
+			// 'Access-Control-Allow-Origin':'*'
+		})
+	});
+
+	fetch(request)
+	// .then(function(resp) {
+	// 	console.log(resp);
+	// });
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (result) {
+		console.log(result);
+	})
+	.catch (function (error) {
+		// console.log('Request failed', error);
+	});
+}
+
+// Cool sample - https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api
+// function logResult(result) {
+// 	console.log(result);
+//   }
+  
+//   function logError(error) {
+// 	console.log('Looks like there was a problem: \n', error);
+//   }
+  
+//   function validateResponse(response) {
+// 	if (!response.ok) {
+// 	  throw Error(response.statusText);
+// 	}
+// 	return response;
+//   }
+  
+//   function readResponseAsJSON(response) {
+// 	return response.json();
+//   }
+  
+//   function fetchJSON(pathToResource) {
+// 	fetch(pathToResource) // 1
+// 	.then(validateResponse) // 2
+// 	.then(readResponseAsJSON) // 3
+// 	.then(logResult) // 4
+// 	.catch(logError);
+//   }
+  
+//   fetchJSON('examples/example.json');
 
 
 
+// Sample for assign code. Not yet test this method
+// let defaultOptions = {
+// 	url:'',
+// 	method:'POST',
+// 	mode: 'cors',
+// 	headers:{
+// 	'Access-Control-Allow-Origin':'*'
+// 	},
+// 	body:null,
+// 	};
+	
+// 	let UploadFile=function(options){
+	
+// 	let header = new Headers({
+// 		'Access-Control-Allow-Origin':'*',
+// 		'Content-Type': 'multipart/form-data'
+// 	});
+// 	let opt = Object.assign({}, defaultOptions, options); //将默认的参数和传过来的合并在一起
+// 	let sentData={
+// 		method:opt.method,
+// 		mode: 'cors',
+// 		header: header,
+// 		body:opt.body || ''
+// 	};
+// 	return new Promise((reslove,reject)=>{
+// 		fetch(opt.url, sentData)
+// 			.then(response=> response.json())
+// 			.then(responseText=>{
+// 				let resp = typeof responseText === 'string' ? JSON.parse(responseText) : responseText;
+// 				//console.log(resp);
+// 				reslove(resp); //这个resp会被外部接收
+// 			}).catch(err=>{
+// 			//console.log(err);
+// 			reject(err);
+// 		});
+// 	}).catch(err => {
+// 			console.log('出错了');
+// 		});
+
+
+function FirstRequestToGraph(AccessToken){
+	fetch('https://graph.facebook.com/v2.8/me?fields=posts.limit(275){privacy}%2Cname&access_token='+AccessToken, {
+  method: 'GET'
+})
+.then(function(response) {
+  return response.json();
+})
+.then(function(json){
+  NextPage = json.posts.paging.next;
+})
+.catch(function(err) {
+  console.log(`Error: ${err}` )
+});
+
+}
+
+
+
+// Fetch does not support waiting download data
+function fetchPost_pass(){
+	let url = 'https://api.keyvalue.xyz/new/dunglam';
+	// The data we are going to send in our request
+	let dat = {name: 'okie'};
+   
+	let header = new Headers({
+		// 'Content-Type': 'multipart/form-data',
+		'Content-Type': 'text/plain',
+	});
+
+	var request = new Request(url, {
+		method: 'POST', 
+		headers: header,
+		// body: JSON.stringify(data), 
+	});
+	const decoder = new TextDecoder('utf-8')
+	fetch(request)
+	.then(response => {
+	  					response.body
+								.getReader()
+								.read()
+								.then(({value, done}) => {
+		  													console.log(decoder.decode(value))
+														})
+	})
+	.catch(error => {console.log(error);});
+
+	// Work well
+	function doPost_duynhat(){
+		let url = 'https://api.keyvalue.xyz/new/dunglam';
+		// The data we are going to send in our request
+		let data = {name: 'okie'};
+	   
+		let header = new Headers({
+			'Content-Type': 'multipart/form-data',
+			// 'Access-Control-Allow-Origin':'*'
+			});
+	
+		var request = new Request(url, {
+			method: 'POST', 
+			headers: header,
+			// redirect: 'follow',
+			// mode: 'cors',
+			// body: JSON.stringify(data), 
+		});
+	
+		fetch(request).
+		then((res) => {console.log(res.body); return res;}).
+		catch(error => {console.log(error);});
+	}
+
+	
+	// fetch(request).
+	// then((res) => {
+	// 	// console.log(res);
+	// 	return res.body.getReader();
+	// 	// while(true){
+	// 	// 	if(res.ok){
+	// 	// 		console.log(res);
+	// 	// 		break;
+	// 	// 	}
+	// 	// }	
+	// // 	// while(true) {
+	// // 	// 	// done is true for the last chunk
+	// // 	// 	// value is Uint8Array of the chunk bytes
+	// // 		// const {done, value} = await reader.read();
+		  
+	// // 	// 	if (done) {
+	// // 	// 		console.log(value);
+	// // 	// 	  break;
+	// // 	// 	};
+	// // 	// }
+	// // 	// console.log(reader);
+	// // 	// console.log(res);
+	// // 	var d = await res.json();
+	// // 	console.log(d);
+	// 	return res;
+	// }).
+	// then((res) => {console.log(res);}).
+	// catch(error => {console.log(error);});
+}
