@@ -2,26 +2,88 @@
 var FAILED_TIMES = 3;
 
 function main(){
-	fetchGet();
-	// fetchPost();
+	// fetchGet();
+	doPostClassic();
 	// window.location.replace("signin.html");
 }
 
 
+function doPostClassic(){
+	let url = "https://docs.google.com/forms/d/e/1FAIpQLSc1KAZe217bN2bBlGom_sPURqHzdieYN7TlwMagBnJ49PdHbA/viewform?embedded=true";
+   // // The data we are going to send in our request
+   let msgBody = {
+		'entry.827678371' : 'okie',
+		'entry.1012948147' : 'hi',
+		'entry.264705479' : 'thu'
+	};
+
+//    var http = new XMLHttpRequest();
+//    var params = JSON.stringify(msgBody);
+//    http.open('POST', url, true);
+
+//    //Send the proper header information along with the request
+//    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+//    http.onreadystatechange = function() {//Call a function when the state changes.
+// 	   if(http.readyState == 4 && http.status == 200) {
+// 		   console.log(http.responseText);
+// 	   }
+//    }
+//    http.send(params);
+
+//    var params = {
+//     userName: 'test@gmail.com',
+//     password: 'Password!',
+//     grant_type: 'password'
+// };
+
+	var formData = new FormData();
+
+	for (var k in msgBody) {
+		formData.append(k, msgBody[k]);
+	}
+
+	var request = {
+		method: 'POST',
+		// headers: new Headers({'Content-Type': 'multipart/form-data'}),
+		// headers: new Headers({'Content-Type': 'application/x-www-form-urlencoded'}),
+		headers: new Headers({
+			'Content-Type': 'application/x-www-form-urlencoded', 
+			// 'Access-Control-Allow-Credentials' : true,
+    		// 'Access-Control-Allow-Origin':'*', 
+		}),
+		mode: 'no-cors',
+		body: formData
+	};
+
+	fetch(url, request).
+	catch(error => {console.log(error);});
+}
+
+
+
+
 // Cool
 function fetchPost(){
-	let url = 'https://api.keyvalue.xyz/new/dunglam';
-	// let dat = {name: 'okie'};
+	let url = "https://docs.google.com/forms/d/e/1FAIpQLSc1KAZe217bN2bBlGom_sPURqHzdieYN7TlwMagBnJ49PdHbA/viewform?embedded=true";
+	// let url = 'https://api.keyvalue.xyz/new/dunglam';
+	
+	let msgBody = {
+		'entry.827678371' : 'okie',
+		'entry.1012948147' : 'hi',
+		'entry.264705479' : 'thu'
+	};
    
 	let header = new Headers({
 		// 'Content-Type': 'multipart/form-data',
-		'Content-Type': 'text/plain',
+		// 'Content-Type': 'text/plain',
+		'Content-Type': 'application/x-www-form-urlencoded',
 	});
 
 	var request = new Request(url, {
 		method: 'POST', 
 		headers: header,
-		// body: JSON.stringify(data), 
+		body: JSON.stringify(msgBody), 
 	});
 	const decoder = new TextDecoder('utf-8')
 	fetch(request)
@@ -33,6 +95,10 @@ function fetchPost(){
 	.catch(error => {console.log(error);});
 }
 
+// https://docs.google.com/forms/d/e/1FAIpQLSc1KAZe217bN2bBlGom_sPURqHzdieYN7TlwMagBnJ49PdHbA/viewform?embedded=true
+// entry.827678371: r
+// entry.1012948147: r
+// entry.264705479: r
 
 // Cool
 function fetchGet(){

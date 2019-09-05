@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="mhttp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="mhttp.js"></script> -->
 </head>
+<script>
+    // console.log("hello");
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "docs.google.com/forms/d/e/1FAIpQLSc1KAZe217bN2bBlGom_sPURqHzdieYN7TlwMagBnJ49PdHbA/viewform?embedded=true", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("{'entry.827678371' : 'okie','entry.1012948147' : 'hi','entry.264705479' : 'thu'}");
+    // main();
+</script>
 <body>
-    <script>
-        // console.log("hello");
-        main();
-    </script>
     
 </body>
 </html>
